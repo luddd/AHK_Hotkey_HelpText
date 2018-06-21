@@ -566,6 +566,7 @@ Return
 HTSb_RunIntro() {
 	Global intro := new GUIText(100,200,30,"Black","",255,"MV Boli","+fadein +fadeswitch +fadeout +savemovable")
 	intro.MInterrupt := "Space"
+	intro.Message(" ",200)
 	intro.Message("Hit Space to skip...",5000)
 	intro.Message("Hello!",3000,0,"Black",50,"OCR A Extended")
 	intro.Message("So this is your first time using HelpText!",3000,0,"Yellow",60, "Times New Roman Italic")
