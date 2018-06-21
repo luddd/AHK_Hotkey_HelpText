@@ -46,7 +46,7 @@ If (SubStr(A_ScriptName,1,-3) = "HelpTextFunctions.") {
 		ExitApp
 	}
 
-	;  If HelpText.ahk is not included into another script, assign the scripts to HelpScript here.
+	;  If HelpTextFunctions.ahk is not included into another script, assign the scripts to HelpScript here.
 	;  HelpScript may be a variable or an object assigned to (an)other script name(s) / full path(s)
 	;  Example:
 	;
@@ -59,18 +59,9 @@ If (SubStr(A_ScriptName,1,-3) = "HelpTextFunctions.") {
 	;  HelpScript.Test2 := "C:\Users\User\Desktop\Test2.ahk"
 	;  HelpScript.Test3 := "Test3.ahk"
 	;
-	;  Another easier way to add autohotkey files is add them to the HelpTextHelp.ini
-	;  file (or *Help.ini where * is your script that includes HelpText.ahk) under the
+	;  Another easier way to add autohotkey files is add them to the HelpTextFunctionsHelp.ini
+	;  file (or *Help.ini where * is your script that includes HelpTextFunctions.ahk) under the
 	;  [AutoHotkeyFileList] section.
-	
-	HelpScript := {}
-	HelpScript.Test1 := "Test1.ahk"
-	HelpScript.Test2 := "Test2.ahk"
-	HelpScript.Test3 := "Test3.ahk"
-	; HelpScript.Broadcast := "\\10.1.1.40\8\Lud\Broadcast_Settings\Backup\OOP\BroadcastControlFiles\Hotkeys.ahk"
-	
-	
-	
 	
 }
 
