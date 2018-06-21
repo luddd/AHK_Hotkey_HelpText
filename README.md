@@ -39,7 +39,7 @@ PREFACE
   IMPLEMENTATION:
   To include the Hotkeys in an AutoHotkey script, add an explanation between double semicolons:
   
-  !#^+e::  ;;This is an example;;
+  	!#^+e::  ;;This is an example;;
   
   ... then include the AutoHotkey script using the options below:
   
@@ -66,9 +66,13 @@ Option 2:
 	
 Option 3:
 	Add an 
+	
 		#Include HelpTextFunctions.ahk 
+		
 	AT THE BOTTOM of another script and add
+	
 		Gosub, HelpText
+		
 	Somewhere in the main thread.
 	
 If the variable/object HelpScript is not defined, HelpText will pull any explained hotkeys out of the
@@ -79,11 +83,11 @@ CONFIGURATION
 The HelpText messager may be configured by simply dragging and dropping.  When The left mouse button is held down
 on the text, a tooltip gives simple instructions for configuring the following:
 
-Font (press f)
-Size (press s)
-Color (press c)
-Transparency (press t)
-Delay_ms (press d)  (This is a delay before the help text pops up after activating modifiers
+	Font (press f)
+	Size (press s)
+	Color (press c)
+	Transparency (press t)
+	Delay_ms (press d)  (This is a delay before the help text pops up after activating modifiers
 
 Keep the mouse button down until text is configured and positioned how you want it.  When you drop the text,
 The settings are saved in the Help.ini file.
@@ -103,13 +107,15 @@ HELPTEXT MESSAGER
 There are other options that are also changable if you so desire that are usually not configured.  These can be configured by
 adding/editing the following values in the script(the values I am listing are the default values already):
 
-help.hotkeys := ["^/","^!/"]  			; an array of hotkeys for turning HelpText on/off.  ? substitutes / in the script.
-help.reload := ["^!'"] 				; An Array of hotkeys (only one here) for re-loading HelpText
-help.hotkeysexplain := "Turns on/off the help text" ; The explanation for the HelpText on/off hotkey
-help.reloadexplain := "Reload HelpText" 	; ditto for HelpText re-load
+	help.hotkeys := ["^/","^!/"]  			; an array of hotkeys for turning HelpText on/off.  ? substitutes / in the script.
+	help.reload := ["^!'"] 				; An Array of hotkeys (only one here) for re-loading HelpText
+	help.hotkeysexplain := "Turns on/off the help text" ; The explanation for the HelpText on/off hotkey
+	help.reloadexplain := "Reload HelpText" 	; ditto for HelpText re-load
 
 And finally this monster:
-help.options .= " +savemovable{" AA_ScriptFullPath "Help.ini<HelpSettings>} +dragallchange +dragcustomchange +draglimits +savevalues{color,size,style,trans,x,y,Delay_ms,<help.state>state}"
+
+	help.options .= " +savemovable{" AA_ScriptFullPath "Help.ini<HelpSettings>} +dragallchange +dragcustomchange 
+	+draglimits +savevalues{color,size,style,trans,x,y,Delay_ms,<help.state>state}"
 	
 	help.options is concatenated so that you may initially (or afterwards) set or concatenate more options if you wish.
 	The above options are needed to allow HelpText to work as it should.  However, there are additional options that you
